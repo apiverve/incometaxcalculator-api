@@ -1,0 +1,111 @@
+openapi: 3.0.4
+info:
+  title: Income Tax Calculator
+  description: >-
+    Income Tax Calculator is a tool for calculating US federal income tax. It
+    takes your income, filing status, and year to compute your total tax,
+    effective rate, marginal rate, and a full bracket-by-bracket breakdown.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/incometaxcalculator:
+    get:
+      summary: Calculate Income Tax
+      description: >-
+        Calculate federal income tax for a given income and filing status.
+        Returns total tax, effective rate, marginal rate, and bracket breakdown.
+      operationId: incometaxcalculator
+      parameters:
+        - name: income
+          in: query
+          schema:
+            type: number
+          required: true
+          description: Gross annual income in USD
+          example: 85000
+        - name: filing_status
+          in: query
+          schema:
+            type: string
+          required: true
+          description: Filing status
+          example: single
+        - name: year
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: The tax year to use for brackets. Defaults to the previous year.
+          example: 2024
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  year: 2025
+                  filing_status: single
+                  income: 85000
+                  standardDeduction: 15000
+                  taxableIncome: 70000
+                  totalTax: 10852.5
+                  effectiveRate: 12.77%
+                  marginalRate: 22%
+                  incomeAfterTax: 74147.5
+                  brackets:
+                    - rate: 0.1
+                      ratePercent: 10.0%
+                      rangeMin: 0
+                      rangeMax: 11925
+                      taxableAmount: 11926
+                      taxAmount: 1192.6
+                    - rate: 0.12
+                      ratePercent: 12.0%
+                      rangeMin: 11926
+                      rangeMax: 48475
+                      taxableAmount: 36550
+                      taxAmount: 4386
+                    - rate: 0.22
+                      ratePercent: 22.0%
+                      rangeMin: 48476
+                      rangeMax: 103350
+                      taxableAmount: 21524
+                      taxAmount: 4735.28
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
