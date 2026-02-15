@@ -1,0 +1,55 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'com.apiverve'
+version = '1.1.13'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation 'org.json:json:20231013'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.apiverve'
+            artifactId = 'incometaxcalculator-api'
+            version = '1.1.13'
+
+            from components.java
+
+            pom {
+                name = 'Income Tax Calculator'
+                description = 'Income Tax Calculator is a tool for calculating US federal income tax. It takes your income, filing status, and year to compute your total tax, effective rate, marginal rate, and a full bracket-by-bracket breakdown.'
+                url = 'https://apiverve.com'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'apiverve'
+                        name = 'APIVerve'
+                        email = 'hello@apiverve.com'
+                    }
+                }
+
+                scm {
+                    connection = 'scm:git:git://github.com/apiverve/incometaxcalculator-api.git'
+                    developerConnection = 'scm:git:ssh://github.com/apiverve/incometaxcalculator-api.git'
+                    url = 'https://github.com/apiverve/incometaxcalculator-api'
+                }
+            }
+        }
+    }
+}
