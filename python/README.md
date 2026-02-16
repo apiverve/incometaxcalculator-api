@@ -44,7 +44,11 @@ from apiverve_incometaxcalculator.apiClient import IncometaxcalculatorAPIClient
 # Initialize the client with your APIVerve API key
 api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "income": 85000, "filing_status": "single", "year": 2024 }
+query = {
+    "income": 85000,
+    "filing_status": "single",
+    "year": 2024
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "income": 85000, "filing_status": "single", "year": 2024 }
+query = {
+    "income": 85000,
+    "filing_status": "single",
+    "year": 2024
+}
 ```
 
 ###### Simple Request
@@ -154,7 +162,11 @@ from apiverve_incometaxcalculator.apiClient import IncometaxcalculatorAPIClient,
 
 api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "income": 85000, "filing_status": "single", "year": 2024 }
+query = {
+    "income": 85000,
+    "filing_status": "single",
+    "year": 2024
+}
 
 try:
     result = api.execute(query)
@@ -175,7 +187,11 @@ from apiverve_incometaxcalculator.apiClient import IncometaxcalculatorAPIClient,
 
 api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "income": 85000, "filing_status": "single", "year": 2024 }
+query = {
+    "income": 85000,
+    "filing_status": "single",
+    "year": 2024
+}
 
 try:
     result = api.execute(query)
@@ -209,7 +225,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_incometaxcalculator.apiClient import IncometaxcalculatorAPIClient, IncometaxcalculatorAPIClientError
 
-query = { "income": 85000, "filing_status": "single", "year": 2024 }
+query = {
+    "income": 85000,
+    "filing_status": "single",
+    "year": 2024
+}
 
 # Using context manager ensures proper cleanup
 with IncometaxcalculatorAPIClient("[YOUR_API_KEY]") as api:
@@ -235,7 +255,11 @@ from apiverve_incometaxcalculator.apiClient import IncometaxcalculatorAPIClient
 # Enable debug mode
 api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "income": 85000, "filing_status": "single", "year": 2024 }
+query = {
+    "income": 85000,
+    "filing_status": "single",
+    "year": 2024
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -250,8 +274,13 @@ from apiverve_incometaxcalculator.apiClient import IncometaxcalculatorAPIClient
 
 api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "income": 85000,
+    "filing_status": "single",
+    "year": 2024
+}
+
 try:
-    query = { "income": 85000, "filing_status": "single", "year": 2024 }
     result = api.execute(query)
     print(result)
 finally:
