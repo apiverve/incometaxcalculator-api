@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/incometaxcalculator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Income Tax Calculator is a tool for calculating US federal income tax. It takes your income, filing status, and year to compute your total tax, effective rate, marginal rate, and a full bracket-by-bracket breakdown.",
   "main": "index.js",
   "types": "index.d.ts",
