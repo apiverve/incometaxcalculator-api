@@ -61,8 +61,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   income: 85000,
-  filing_status: "single",
-  year: 2024
+  rate: 22,
+  deduction: 14600
 };
 
 api.execute(query, function (error, data) {
@@ -83,8 +83,8 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   income: 85000,
-  filing_status: "single",
-  year: 2024
+  rate: 22,
+  deduction: 14600
 };
 
 api.execute(query)
@@ -106,8 +106,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   income: 85000,
-  filing_status: "single",
-  year: 2024
+  rate: 22,
+  deduction: 14600
 };
 
     try {
@@ -137,6 +137,8 @@ async function makeRequest() {
     "effectiveRate": "12.77%",
     "marginalRate": "22%",
     "incomeAfterTax": 74147.5,
+    "monthlyTax": 904.38,
+    "monthlyIncome": 6178.96,
     "brackets": [
       {
         "rate": 0.1,
