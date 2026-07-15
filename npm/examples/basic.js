@@ -16,8 +16,8 @@ const api = new incometaxcalculatorAPI({
 // Example query
 var query = {
   income: 85000,
-  filing_status: "single",
-  year: 2024
+  rate: 22,
+  deduction: 14600
 };
 
 // Make the API request using callback
