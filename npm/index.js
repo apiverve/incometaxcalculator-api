@@ -30,7 +30,7 @@ class incometaxcalculatorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/incometaxcalculator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"income":{"type":"number","required":true,"min":0},"filing_status":{"type":"string","required":true},"year":{"type":"integer","required":false,"min":2000,"max":2030}};
+        this.validationRules = {"income":{"type":"number","required":true,"min":0},"rate":{"type":"number","required":true,"min":0,"max":100},"deduction":{"type":"number","required":false,"min":0}};
     }
 
     /**
