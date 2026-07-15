@@ -12,8 +12,14 @@ public class BasicExample {
         IncomeTaxCalculatorAPIClient client = new IncomeTaxCalculatorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Query parameters
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;income&quot;, 85000);
+        parameters.put(&quot;rate&quot;, 22);
+        parameters.put(&quot;deduction&quot;, 14600);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
