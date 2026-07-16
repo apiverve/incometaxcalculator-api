@@ -25,27 +25,30 @@ namespace APIVerve.API.IncomeTaxCalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("year")]
-        public long Year { get; set; }
+        public long? Year { get; set; }
 
         [JsonProperty("filing_status")]
         public string FilingStatus { get; set; }
 
         [JsonProperty("income")]
-        public long Income { get; set; }
+        public long? Income { get; set; }
 
         [JsonProperty("standardDeduction")]
-        public long StandardDeduction { get; set; }
+        public long? StandardDeduction { get; set; }
 
         [JsonProperty("taxableIncome")]
-        public long TaxableIncome { get; set; }
+        public long? TaxableIncome { get; set; }
 
         [JsonProperty("totalTax")]
-        public double TotalTax { get; set; }
+        public double? TotalTax { get; set; }
 
         [JsonProperty("effectiveRate")]
         public string EffectiveRate { get; set; }
@@ -54,7 +57,13 @@ namespace APIVerve.API.IncomeTaxCalculator
         public string MarginalRate { get; set; }
 
         [JsonProperty("incomeAfterTax")]
-        public double IncomeAfterTax { get; set; }
+        public double? IncomeAfterTax { get; set; }
+
+        [JsonProperty("monthlyTax")]
+        public double? MonthlyTax { get; set; }
+
+        [JsonProperty("monthlyIncome")]
+        public double? MonthlyIncome { get; set; }
 
         [JsonProperty("brackets")]
         public Bracket[] Brackets { get; set; }
@@ -63,21 +72,33 @@ namespace APIVerve.API.IncomeTaxCalculator
     public partial class Bracket
     {
         [JsonProperty("rate")]
-        public double Rate { get; set; }
+        public double? Rate { get; set; }
 
         [JsonProperty("ratePercent")]
         public string RatePercent { get; set; }
 
         [JsonProperty("rangeMin")]
-        public long RangeMin { get; set; }
+        public long? RangeMin { get; set; }
 
         [JsonProperty("rangeMax")]
-        public long RangeMax { get; set; }
+        public long? RangeMax { get; set; }
 
         [JsonProperty("taxableAmount")]
-        public long TaxableAmount { get; set; }
+        public long? TaxableAmount { get; set; }
 
         [JsonProperty("taxAmount")]
-        public double TaxAmount { get; set; }
+        public double? TaxAmount { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
