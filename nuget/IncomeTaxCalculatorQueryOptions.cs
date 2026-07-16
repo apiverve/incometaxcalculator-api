@@ -14,18 +14,18 @@ namespace APIVerve.API.IncomeTaxCalculator
         /// Gross annual income in USD
         /// </summary>
         [JsonProperty("income")]
-        public string Income { get; set; }
+        public double Income { get; set; }
 
         /// <summary>
-        /// Filing status
+        /// Tax rate as a percentage (e.g., 22 for 22%)
         /// </summary>
-        [JsonProperty("filing_status")]
-        public string Filing_status { get; set; }
+        [JsonProperty("rate")]
+        public double Rate { get; set; }
 
         /// <summary>
-        /// The tax year to use for brackets. Defaults to the previous year.
+        /// Optional deduction amount to subtract from income before calculating tax
         /// </summary>
-        [JsonProperty("year")]
-        public string Year { get; set; }
+        [JsonProperty("deduction")]
+        public double? Deduction { get; set; }
     }
 }
