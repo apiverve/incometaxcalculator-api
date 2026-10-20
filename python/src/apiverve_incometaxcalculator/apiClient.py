@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -25,8 +25,8 @@ class IncometaxcalculatorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "income": {"type": "number", "required": True, "min": 0},
-        "filing_status": {"type": "string", "required": True},
-        "year": {"type": "integer", "required": False, "min": 2000, "max": 2030}
+        "rate": {"type": "number", "required": True, "min": 0, "max": 100},
+        "deduction": {"type": "number", "required": False, "min": 0}
     }
 
     # Format validation patterns

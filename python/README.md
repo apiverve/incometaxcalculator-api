@@ -1,13 +1,12 @@
 Income Tax Calculator API
 ============
 
-Income Tax Calculator is a tool for calculating US federal income tax. It takes your income, filing status, and year to compute your total tax, effective rate, marginal rate, and a full bracket-by-bracket breakdown.
+Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-incometaxcalculator.svg)](https://pypi.org/project/apiverve-incometaxcalculator/)
+
+This is a Python wrapper for the [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-incometaxcalculator
 
 ## Configuration
 
-Before using the incometaxcalculator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Income Tax Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -46,8 +45,8 @@ api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "income": 85000,
-    "filing_status": "single",
-    "year": 2024
+    "rate": 22,
+    "deduction": 14600
 }
 
 try:
@@ -64,7 +63,7 @@ except Exception as e:
 
 ## Usage
 
-The Income Tax Calculator API documentation is found here: [https://docs.apiverve.com/ref/incometaxcalculator](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=pypi&utm_medium=readme).
+The Income Tax Calculator API documentation is found here: [https://docs.apiverve.com/ref/incometaxcalculator](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -88,8 +87,8 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "income": 85000,
-    "filing_status": "single",
-    "year": 2024
+    "rate": 22,
+    "deduction": 14600
 }
 ```
 
@@ -119,6 +118,8 @@ print(result)
     "effectiveRate": "12.77%",
     "marginalRate": "22%",
     "incomeAfterTax": 74147.5,
+    "monthlyTax": 904.38,
+    "monthlyIncome": 6178.96,
     "brackets": [
       {
         "rate": 0.1,
@@ -164,8 +165,8 @@ api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "income": 85000,
-    "filing_status": "single",
-    "year": 2024
+    "rate": 22,
+    "deduction": 14600
 }
 
 try:
@@ -189,8 +190,8 @@ api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "income": 85000,
-    "filing_status": "single",
-    "year": 2024
+    "rate": 22,
+    "deduction": 14600
 }
 
 try:
@@ -227,8 +228,8 @@ from apiverve_incometaxcalculator.apiClient import IncometaxcalculatorAPIClient,
 
 query = {
     "income": 85000,
-    "filing_status": "single",
-    "year": 2024
+    "rate": 22,
+    "deduction": 14600
 }
 
 # Using context manager ensures proper cleanup
@@ -257,8 +258,8 @@ api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "income": 85000,
-    "filing_status": "single",
-    "year": 2024
+    "rate": 22,
+    "deduction": 14600
 }
 
 # Debug information will be printed to console
@@ -276,8 +277,8 @@ api = IncometaxcalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "income": 85000,
-    "filing_status": "single",
-    "year": 2024
+    "rate": 22,
+    "deduction": 14600
 }
 
 try:
@@ -292,7 +293,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -303,12 +304,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
