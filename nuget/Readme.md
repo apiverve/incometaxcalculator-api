@@ -1,13 +1,12 @@
-IncomeTaxCalculator API
+Income Tax Calculator API
 ============
 
-Income Tax Calculator is a tool for calculating US federal income tax. It takes your income, filing status, and year to compute your total tax, effective rate, marginal rate, and a full bracket-by-bracket breakdown.
+Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [IncomeTaxCalculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.IncomeTaxCalculator.svg)](https://www.nuget.org/packages/APIVerve.API.IncomeTaxCalculator)
+
+This is a .NET wrapper for the [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the incometaxcalculator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Income Tax Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,10 +60,10 @@ class Program
         var apiClient = new IncomeTaxCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new IncomeTaxCalculatorQueryOptions {
-    Income = 85000,
-    Rate = 22,
-    Deduction = 14600
-};
+            Income = 85000,
+            Rate = 22,
+            Deduction = 14600
+        };
 
         // Make the API call
         try
@@ -94,13 +93,13 @@ class Program
 
 ## Usage
 
-The IncomeTaxCalculator API documentation is found here: [https://docs.apiverve.com/ref/incometaxcalculator](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=nuget&utm_medium=readme).
+The Income Tax Calculator API documentation is found here: [https://docs.apiverve.com/ref/incometaxcalculator](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-IncomeTaxCalculator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Income Tax Calculator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -127,10 +126,10 @@ public class Example
         var apiClient = new IncomeTaxCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new IncomeTaxCalculatorQueryOptions {
-    Income = 85000,
-    Rate = 22,
-    Deduction = 14600
-};
+            Income = 85000,
+            Rate = 22,
+            Deduction = 14600
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -161,10 +160,10 @@ public class Example
         var apiClient = new IncomeTaxCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new IncomeTaxCalculatorQueryOptions {
-    Income = 85000,
-    Rate = 22,
-    Deduction = 14600
-};
+            Income = 85000,
+            Rate = 22,
+            Deduction = 14600
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -200,10 +199,10 @@ public class Example
         var apiClient = new IncomeTaxCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new IncomeTaxCalculatorQueryOptions {
-    Income = 85000,
-    Rate = 22,
-    Deduction = 14600
-};
+            Income = 85000,
+            Rate = 22,
+            Deduction = 14600
+        };
 
         try
         {
@@ -258,10 +257,10 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new IncomeTaxCalculatorQueryOptions {
-    Income = 85000,
-    Rate = 22,
-    Deduction = 14600
-};
+            Income = 85000,
+            Rate = 22,
+            Deduction = 14600
+        };
 
         try
         {
@@ -430,7 +429,7 @@ using (var apiClient = new IncomeTaxCalculatorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -441,12 +440,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
