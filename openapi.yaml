@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Income Tax Calculator
   description: >-
-    Income Tax Calculator is a tool for calculating US federal income tax. It
-    takes your income, filing status, and year to compute your total tax,
-    effective rate, marginal rate, and a full bracket-by-bracket breakdown.
+    Income Tax Calculator computes US federal income tax and take-home pay from
+    gross income and filing status. It outputs total tax owed, effective and
+    marginal rates, standard deductions, and net monthly income.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/incometaxcalculator:
     get:
-      summary: Calculate Tax with Custom Rate
+      summary: Income Tax Calculator
       description: >-
         Calculate income tax using a custom tax rate. Useful for simple
         flat-rate tax calculations or estimations.
