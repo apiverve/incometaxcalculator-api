@@ -1,6 +1,6 @@
 # Income Tax Calculator API - PHP Package
 
-Income Tax Calculator is a tool for calculating US federal income tax. It takes your income, filing status, and year to compute your total tax, effective rate, marginal rate, and a full bracket-by-bracket breakdown.
+Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income.
 
 ## Installation
 
@@ -121,11 +121,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/incometaxcalculator?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/incometaxcalculator?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/incometaxcalculator?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/incometaxcalculator?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
