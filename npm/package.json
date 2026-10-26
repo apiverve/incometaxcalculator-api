@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/incometaxcalculator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income.",
   "main": "index.js",
   "types": "index.d.ts",
