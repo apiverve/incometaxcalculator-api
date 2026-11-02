@@ -1,11 +1,11 @@
 # Income Tax Calculator API - Dart/Flutter Client
 
-Income Tax Calculator is a tool for calculating US federal income tax. It takes your income, filing status, and year to compute your total tax, effective rate, marginal rate, and a full bracket-by-bracket breakdown.
+Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_incometaxcalculator.svg)](https://pub.dev/packages/apiverve_incometaxcalculator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_incometaxcalculator: ^1.1.14
+  apiverve_incometaxcalculator: ^1.2.4
 ```
 
 Then run:
@@ -35,8 +35,8 @@ void main() async {
   try {
     final response = await client.execute({
       'income': 85000,
-      'filing_status': 'single',
-      'year': 2024
+      'rate': 22,
+      'deduction': 14600
     });
 
     print('Status: ${response.status}');
@@ -63,6 +63,8 @@ void main() async {
     "effectiveRate": "12.77%",
     "marginalRate": "22%",
     "incomeAfterTax": 74147.5,
+    "monthlyTax": 904.38,
+    "monthlyIncome": 6178.96,
     "brackets": [
       {
         "rate": 0.1,
@@ -95,12 +97,12 @@ void main() async {
 
 ## API Reference
 
-- **API Home:** [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/incometaxcalculator](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=dart&utm_medium=readme)
+- **API Home:** [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/incometaxcalculator](https://docs.apiverve.com/ref/incometaxcalculator?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -108,4 +110,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)

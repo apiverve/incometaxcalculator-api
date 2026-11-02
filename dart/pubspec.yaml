@@ -1,7 +1,7 @@
 name: apiverve_incometaxcalculator
-description: Income Tax Calculator is a tool for calculating US federal income tax. It takes your income, filing status, and year to compute your total tax, effective rate, marginal rate, and a full bracket-by-bracket breakdown.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=homepage
+description: "Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income."
+version: 1.2.4
+homepage: https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/incometaxcalculator-api/tree/main/dart
 
 environment:

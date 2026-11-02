@@ -46,12 +46,12 @@ final _formatPatterns = {
 
 /// Income Tax Calculator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/incometaxcalculator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [income] (required) - Gross annual income in USD [min: 0]
-/// * [filingStatus] (required) - Filing status
-/// * [year] - The tax year to use for brackets. Defaults to the previous year. [min: 2000, max: 2030]
+/// * [rate] (required) - Tax rate as a percentage (e.g., 22 for 22%) [min: 0, max: 100]
+/// * [deduction] - Optional deduction amount to subtract from income before calculating tax [min: 0]
 class IncometaxcalculatorClient {
   final String apiKey;
   final String baseUrl;
@@ -60,8 +60,8 @@ class IncometaxcalculatorClient {
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'income': ValidationRule(type: 'number', required: true, min: 0),
-    'filing_status': ValidationRule(type: 'string', required: true),
-    'year': ValidationRule(type: 'integer', required: false, min: 2000, max: 2030),
+    'rate': ValidationRule(type: 'number', required: true, min: 0, max: 100),
+    'deduction': ValidationRule(type: 'number', required: false, min: 0),
   };
 
   IncometaxcalculatorClient(this.apiKey, {
