@@ -25,18 +25,22 @@ declare module '@apiverve/incometaxcalculator' {
 
 
   interface IncomeTaxCalculatorData {
-      year:              number | null;
-      filingStatus:      null | string;
-      income:            number | null;
-      standardDeduction: number | null;
-      taxableIncome:     number | null;
-      totalTax:          number | null;
-      effectiveRate:     null | string;
-      marginalRate:      null | string;
-      incomeAfterTax:    number | null;
-      monthlyTax:        number | null;
-      monthlyIncome:     number | null;
-      brackets:          Bracket[];
+      year:               number | null;
+      filingStatus:       null | string;
+      income:             number | null;
+      standardDeduction:  number | null;
+      taxableIncome:      number | null;
+      totalTax:           number | null;
+      effectiveRate:      null | string;
+      marginalRate:       null | string;
+      incomeAfterTax:     number | null;
+      monthlyTax:         number | null;
+      monthlyIncome:      number | null;
+      brackets:           Bracket[];
+      fica:               Fica;
+      takeHomePay:        number | null;
+      monthlyTakeHomePay: number | null;
+      totalEffectiveRate: null | string;
   }
   
   interface Bracket {
@@ -46,6 +50,17 @@ declare module '@apiverve/incometaxcalculator' {
       rangeMax:      number | null;
       taxableAmount: number | null;
       taxAmount:     number | null;
+  }
+  
+  interface Fica {
+      total:                       number | null;
+      socialSecurityRate:          number | null;
+      socialSecurityWageBase:      number | null;
+      socialSecurityTax:           number | null;
+      medicareRate:                number | null;
+      medicareTax:                 number | null;
+      additionalMedicareThreshold: number | null;
+      additionalMedicareTax:       number | null;
   }
 
   export default class incometaxcalculatorWrapper {
