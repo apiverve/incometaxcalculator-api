@@ -67,6 +67,18 @@ namespace APIVerve.API.IncomeTaxCalculator
 
         [JsonProperty("brackets")]
         public Bracket[] Brackets { get; set; }
+
+        [JsonProperty("fica")]
+        public Fica Fica { get; set; }
+
+        [JsonProperty("takeHomePay")]
+        public double? TakeHomePay { get; set; }
+
+        [JsonProperty("monthlyTakeHomePay")]
+        public double? MonthlyTakeHomePay { get; set; }
+
+        [JsonProperty("totalEffectiveRate")]
+        public string TotalEffectiveRate { get; set; }
     }
 
     public partial class Bracket
@@ -88,6 +100,33 @@ namespace APIVerve.API.IncomeTaxCalculator
 
         [JsonProperty("taxAmount")]
         public double? TaxAmount { get; set; }
+    }
+
+    public partial class Fica
+    {
+        [JsonProperty("total")]
+        public double? Total { get; set; }
+
+        [JsonProperty("socialSecurityRate")]
+        public double? SocialSecurityRate { get; set; }
+
+        [JsonProperty("socialSecurityWageBase")]
+        public long? SocialSecurityWageBase { get; set; }
+
+        [JsonProperty("socialSecurityTax")]
+        public long? SocialSecurityTax { get; set; }
+
+        [JsonProperty("medicareRate")]
+        public double? MedicareRate { get; set; }
+
+        [JsonProperty("medicareTax")]
+        public double? MedicareTax { get; set; }
+
+        [JsonProperty("additionalMedicareThreshold")]
+        public long? AdditionalMedicareThreshold { get; set; }
+
+        [JsonProperty("additionalMedicareTax")]
+        public long? AdditionalMedicareTax { get; set; }
     }
 
     public partial class Premium

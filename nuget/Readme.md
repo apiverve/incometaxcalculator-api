@@ -1,7 +1,7 @@
 Income Tax Calculator API
 ============
 
-Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income.
+Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income, and can add Social Security and Medicare (FICA) for true take-home pay.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.IncomeTaxCalculator.svg)](https://www.nuget.org/packages/APIVerve.API.IncomeTaxCalculator)
@@ -389,12 +389,12 @@ using (var apiClient = new IncomeTaxCalculatorAPIClient("[YOUR_API_KEY]"))
     "income": 85000,
     "standardDeduction": 15000,
     "taxableIncome": 70000,
-    "totalTax": 10852.5,
-    "effectiveRate": "12.77%",
+    "totalTax": 10313.88,
+    "effectiveRate": "12.13%",
     "marginalRate": "22%",
-    "incomeAfterTax": 74147.5,
-    "monthlyTax": 904.38,
-    "monthlyIncome": 6178.96,
+    "incomeAfterTax": 74686.12,
+    "monthlyTax": 859.49,
+    "monthlyIncome": 6223.84,
     "brackets": [
       {
         "rate": 0.1,
@@ -420,7 +420,20 @@ using (var apiClient = new IncomeTaxCalculatorAPIClient("[YOUR_API_KEY]"))
         "taxableAmount": 21524,
         "taxAmount": 4735.28
       }
-    ]
+    ],
+    "fica": {
+      "total": 6502.5,
+      "socialSecurityRate": 0.062,
+      "socialSecurityWageBase": 176100,
+      "socialSecurityTax": 5270,
+      "medicareRate": 0.0145,
+      "medicareTax": 1232.5,
+      "additionalMedicareThreshold": 200000,
+      "additionalMedicareTax": 0
+    },
+    "takeHomePay": 68183.62,
+    "monthlyTakeHomePay": 5681.97,
+    "totalEffectiveRate": "19.78%"
   }
 }
 ```
