@@ -68,6 +68,10 @@ class IncometaxcalculatorData {
   num? monthlyTax;
   num? monthlyIncome;
   List<IncometaxcalculatorDataBracketsItem>? brackets;
+  IncometaxcalculatorDataFica? fica;
+  num? takeHomePay;
+  num? monthlyTakeHomePay;
+  String? totalEffectiveRate;
 
   IncometaxcalculatorData({
     this.year,
@@ -82,6 +86,10 @@ class IncometaxcalculatorData {
     this.monthlyTax,
     this.monthlyIncome,
     this.brackets,
+    this.fica,
+    this.takeHomePay,
+    this.monthlyTakeHomePay,
+    this.totalEffectiveRate,
   });
 
   factory IncometaxcalculatorData.fromJson(Map<String, dynamic> json) => IncometaxcalculatorData(
@@ -97,6 +105,10 @@ class IncometaxcalculatorData {
       monthlyTax: json['monthlyTax'],
       monthlyIncome: json['monthlyIncome'],
       brackets: (json['brackets'] as List?)?.map((e) => IncometaxcalculatorDataBracketsItem.fromJson(e)).toList(),
+      fica: json['fica'] != null ? IncometaxcalculatorDataFica.fromJson(json['fica']) : null,
+      takeHomePay: json['takeHomePay'],
+      monthlyTakeHomePay: json['monthlyTakeHomePay'],
+      totalEffectiveRate: json['totalEffectiveRate'],
     );
 }
 
@@ -124,6 +136,39 @@ class IncometaxcalculatorDataBracketsItem {
       rangeMax: json['rangeMax'],
       taxableAmount: json['taxableAmount'],
       taxAmount: json['taxAmount'],
+    );
+}
+
+class IncometaxcalculatorDataFica {
+  num? total;
+  num? socialSecurityRate;
+  num? socialSecurityWageBase;
+  num? socialSecurityTax;
+  num? medicareRate;
+  num? medicareTax;
+  num? additionalMedicareThreshold;
+  num? additionalMedicareTax;
+
+  IncometaxcalculatorDataFica({
+    this.total,
+    this.socialSecurityRate,
+    this.socialSecurityWageBase,
+    this.socialSecurityTax,
+    this.medicareRate,
+    this.medicareTax,
+    this.additionalMedicareThreshold,
+    this.additionalMedicareTax,
+  });
+
+  factory IncometaxcalculatorDataFica.fromJson(Map<String, dynamic> json) => IncometaxcalculatorDataFica(
+      total: json['total'],
+      socialSecurityRate: json['socialSecurityRate'],
+      socialSecurityWageBase: json['socialSecurityWageBase'],
+      socialSecurityTax: json['socialSecurityTax'],
+      medicareRate: json['medicareRate'],
+      medicareTax: json['medicareTax'],
+      additionalMedicareThreshold: json['additionalMedicareThreshold'],
+      additionalMedicareTax: json['additionalMedicareTax'],
     );
 }
 
