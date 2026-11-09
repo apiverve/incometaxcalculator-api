@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-incometaxcalculator"
-version = "1.2.4"
+version = "1.2.5"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income."
+description = "Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income, and can add Social Security and Medicare (FICA) for true take-home pay."
 keywords = ["income tax api", "tax calculator api", "tax calculation api", "api to calculate taxes", "income tax calculator api"]
 readme = "README.md"
 requires-python = ">=3.9"
