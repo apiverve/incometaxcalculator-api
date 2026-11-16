@@ -4,8 +4,9 @@ info:
   description: >-
     Income Tax Calculator computes US federal income tax and take-home pay from
     gross income and filing status. It outputs total tax owed, effective and
-    marginal rates, standard deductions, and net monthly income, and can add
-    Social Security and Medicare (FICA) for true take-home pay.
+    marginal rates, standard deductions, and net monthly income, can add Social
+    Security and Medicare (FICA) for true take-home pay, and with state=NY adds
+    that state's income tax on the same income.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support

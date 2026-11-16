@@ -1,6 +1,6 @@
 # [Income Tax Calculator API](https://apiverve.com/marketplace/incometaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income, and can add Social Security and Medicare (FICA) for true take-home pay.
+Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income, can add Social Security and Medicare (FICA) for true take-home pay, and with state&#x3D;NY adds that state&#x27;s income tax on the same income.
 
 The Income Tax Calculator API provides a simple, reliable way to integrate income tax calculator functionality into your applications. Built for developers who need production-ready income tax calculator capabilities without the complexity of building from scratch.
 
