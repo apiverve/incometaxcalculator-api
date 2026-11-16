@@ -1,6 +1,6 @@
 # Income Tax Calculator API - Dart/Flutter Client
 
-Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income, and can add Social Security and Medicare (FICA) for true take-home pay.
+Income Tax Calculator computes US federal income tax and take-home pay from gross income and filing status. It outputs total tax owed, effective and marginal rates, standard deductions, and net monthly income, can add Social Security and Medicare (FICA) for true take-home pay, and with state=NY adds that state's income tax on the same income.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_incometaxcalculator.svg)](https://pub.dev/packages/apiverve_incometaxcalculator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_incometaxcalculator: ^1.2.5
+  apiverve_incometaxcalculator: ^1.2.6
 ```
 
 Then run:
